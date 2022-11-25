@@ -11,6 +11,11 @@ namespace _GAME_.Scripts.GlobalVariables
     /// </summary>
     public class CustomEvents
     {
-        
+        // Movement
+        public const string GetPath = nameof(GetPath);
+        public const string GetForwardSpeed = nameof(GetForwardSpeed);
+        public const string CanFollowPath = nameof(CanFollowPath);
+        public const string OnFinishLine = nameof(OnFinishLine);
+        public const string PlayPlayerAnimation = nameof(PlayPlayerAnimation);
     }
 }
