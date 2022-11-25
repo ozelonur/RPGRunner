@@ -15,6 +15,7 @@ namespace _GAME_.Scripts.GlobalVariables
         public const string GetPath = nameof(GetPath);
         public const string GetForwardSpeed = nameof(GetForwardSpeed);
         public const string CanFollowPath = nameof(CanFollowPath);
+        public const string CanMoveHorizontal = nameof(CanMoveHorizontal);
         public const string OnFinishLine = nameof(OnFinishLine);
         public const string PlayPlayerAnimation = nameof(PlayPlayerAnimation);
     }
