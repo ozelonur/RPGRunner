@@ -16,6 +16,7 @@ namespace _GAME_.Scripts.Bears
         [Header("Components")] [SerializeField]
         private PathCreator pathCreator;
         [SerializeField] private EndOfPathInstruction endOfPathInstruction;
+        [SerializeField] private Transform cameraFollowTarget;
 
         #endregion
 
@@ -24,6 +25,7 @@ namespace _GAME_.Scripts.Bears
         private void Start()
         {
             Roar(CustomEvents.GetPath, pathCreator, endOfPathInstruction);
+            Roar(CustomEvents.GetCameraFollowTarget, cameraFollowTarget);
         }
 
         #endregion

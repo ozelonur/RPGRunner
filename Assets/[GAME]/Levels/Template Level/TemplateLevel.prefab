@@ -246,6 +246,7 @@ MonoBehaviour:
   skybox: {fileID: 0}
   pathCreator: {fileID: 2335546846585916764}
   endOfPathInstruction: 2
+  cameraFollowTarget: {fileID: 6843257220578229305}
 --- !u!1001 &1895256914158508807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,6 +319,12 @@ PrefabInstance:
 --- !u!4 &5080042046465125387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6643549749207070476, guid: bfed29ef65f181148a58a56757796aa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1895256914158508807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6843257220578229305 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4950982320618497854, guid: bfed29ef65f181148a58a56757796aa8,
     type: 3}
   m_PrefabInstance: {fileID: 1895256914158508807}
   m_PrefabAsset: {fileID: 0}

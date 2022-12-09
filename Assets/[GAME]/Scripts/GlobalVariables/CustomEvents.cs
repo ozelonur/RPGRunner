@@ -18,5 +18,9 @@ namespace _GAME_.Scripts.GlobalVariables
         public const string CanMoveHorizontal = nameof(CanMoveHorizontal);
         public const string OnFinishLine = nameof(OnFinishLine);
         public const string PlayPlayerAnimation = nameof(PlayPlayerAnimation);
+        
+        // Camera
+        public const string SwitchCamera = nameof(SwitchCamera);
+        public const string GetCameraFollowTarget = nameof(GetCameraFollowTarget);
     }
 }

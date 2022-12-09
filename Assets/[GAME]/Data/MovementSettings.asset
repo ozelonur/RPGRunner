@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MovementSettings
   m_EditorClassIdentifier: 
   forwardSpeed: 10
-  horizontalSpeed: 10
-  horizontalClampRange: 2
+  horizontalSpeed: 0.5
+  horizontalClampRange: 1.8
   rotationSpeed: 1
   canRotate: 1
   rotationPower: 1
