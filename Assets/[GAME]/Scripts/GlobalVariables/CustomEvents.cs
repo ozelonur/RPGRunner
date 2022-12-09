@@ -22,5 +22,6 @@ namespace _GAME_.Scripts.GlobalVariables
         // Camera
         public const string SwitchCamera = nameof(SwitchCamera);
         public const string GetCameraFollowTarget = nameof(GetCameraFollowTarget);
+        public const string GetAnimator = nameof(GetAnimator);
     }
 }

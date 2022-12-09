@@ -1,4 +1,5 @@
 using _GAME_.Scripts.Enums;
+using _GAME_.Scripts.GlobalVariables;
 using _GAME_.Scripts.Interfaces;
 using _ORANGEBEAR_.EventSystem;
 using UnityEngine;
@@ -7,10 +8,10 @@ namespace _GAME_.Scripts.Bears.Player
 {
     public class PlayerAnimateBear : Bear, IAnimator
     {
-        #region Serialized Fields
+        #region Private Variables
 
-        [Header("Components")] [SerializeField]
-        private Animator animator;
+        private Animator _animator;
+        private static readonly int Roll = Animator.StringToHash("Roll");
 
         #endregion
 
@@ -18,8 +19,20 @@ namespace _GAME_.Scripts.Bears.Player
 
         public void PlayAnimation(AnimationTypes animationType)
         {
-            ((IAnimator) this).SetAnimation(animator, animationType);
-        } 
+            ((IAnimator)this).SetAnimation(_animator, animationType);
+        }
+
+        #endregion
+
+        #region MonoBehaviour Methods
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                _animator.SetTrigger(Roll);
+            }
+        }
 
         #endregion
 
@@ -29,13 +42,20 @@ namespace _GAME_.Scripts.Bears.Player
         {
             if (status)
             {
+                Register(CustomEvents.GetAnimator, GetAnimator);
                 Register(GameEvents.OnGameStart, OnGameStart);
             }
 
             else
             {
+                UnRegister(CustomEvents.GetAnimator, GetAnimator);
                 UnRegister(GameEvents.OnGameStart, OnGameStart);
             }
+        }
+
+        private void GetAnimator(object[] args)
+        {
+            _animator = (Animator)args[0];
         }
 
         private void OnGameStart(object[] args)
@@ -44,6 +64,5 @@ namespace _GAME_.Scripts.Bears.Player
         }
 
         #endregion
-       
     }
 }
