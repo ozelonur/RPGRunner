@@ -44,13 +44,20 @@ namespace _GAME_.Scripts.Bears.Player
             {
                 Register(CustomEvents.GetAnimator, GetAnimator);
                 Register(GameEvents.OnGameStart, OnGameStart);
+                Register(CustomEvents.PlayPlayerAnimation, PlayPlayerAnimation);
             }
 
             else
             {
                 UnRegister(CustomEvents.GetAnimator, GetAnimator);
                 UnRegister(GameEvents.OnGameStart, OnGameStart);
+                UnRegister(CustomEvents.PlayPlayerAnimation, PlayPlayerAnimation);
             }
+        }
+
+        private void PlayPlayerAnimation(object[] args)
+        {
+            PlayAnimation((AnimationTypes)args[0]);
         }
 
         private void GetAnimator(object[] args)

@@ -24,6 +24,8 @@ namespace _GAME_.Scripts.Bears.Player
         private DataManager _dataManager;
         private CharacterData _characterData;
 
+        private GameObject _currentCharacter;
+
         #endregion
 
         #region MonoBehaviour Methods
@@ -34,11 +36,19 @@ namespace _GAME_.Scripts.Bears.Player
             
             _characterData = _dataManager.GetCharacterData(defaultCharacterType);
             
-            GameObject model = Instantiate(_characterData.characterModel, modelParent);
+            _currentCharacter = Instantiate(_characterData.characterModel, modelParent);
 
-            Animator animator = model.GetComponent<Animator>();
+            Animator animator = _currentCharacter.GetComponent<Animator>();
             
             Roar(CustomEvents.GetAnimator, animator);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                TransformTheCharacter(CharacterTypes.Magic);
+            }
         }
 
         #endregion
@@ -61,6 +71,25 @@ namespace _GAME_.Scripts.Bears.Player
         {
             Roar(CustomEvents.CanFollowPath, true);
             Roar(CustomEvents.CanMoveHorizontal, true);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void TransformTheCharacter(CharacterTypes characterType)
+        {
+            _characterData = _dataManager.GetCharacterData(characterType);
+            
+            Destroy(_currentCharacter);
+            
+            _currentCharacter = Instantiate(_characterData.characterModel, modelParent);
+            
+            Animator animator = _currentCharacter.GetComponent<Animator>();
+            
+            Roar(CustomEvents.GetAnimator, animator);
+            
+            Roar(CustomEvents.PlayPlayerAnimation, AnimationTypes.Run);
         }
 
         #endregion
