@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2f4bde46fa4e0c98cf238791a16093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skybox: {fileID: 0}
+  skybox: {fileID: 2100000, guid: 2bd8959f5fbd3644aa33af1a155fc147, type: 2}
   pathCreator: {fileID: 2335546846585916764}
   endOfPathInstruction: 2
   cameraFollowTarget: {fileID: 6843257220578229305}
