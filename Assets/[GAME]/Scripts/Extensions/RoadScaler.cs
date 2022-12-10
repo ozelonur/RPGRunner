@@ -12,6 +12,7 @@ namespace _GAME_.Scripts.Extensions
         private PathCreator pathCreator;
 
         [SerializeField] private Transform road;
+        [SerializeField] private Transform finish;
 
         #endregion
 
@@ -27,6 +28,8 @@ namespace _GAME_.Scripts.Extensions
             Vector3 position = road.position;
             position = new Vector3(position.x, position.y, position.z - 20);
             road.position = position;
+            
+            finish.position = Vector3.forward * pathCreator.path.length;
         }
 
         #endregion

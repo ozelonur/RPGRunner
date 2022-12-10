@@ -26,6 +26,7 @@ namespace _GAME_.Scripts.Bears
 
         protected override void CheckRoarings(bool status)
         {
+            base.CheckRoarings(status);
             if (status)
             {
                 Register(CustomEvents.UpdateWorths, UpdateWorths);
