@@ -92,6 +92,8 @@ namespace _GAME_.Scripts.Bears.Player
         public void TransformTheCharacter()
         {
             _characterData = _dataManager.GetCharacterData(newCharacterType);
+            
+            FeelingManager.Instance.PlayDustParticle(transform,transform.position + Vector3.up);
 
             Destroy(_currentCharacter);
 
