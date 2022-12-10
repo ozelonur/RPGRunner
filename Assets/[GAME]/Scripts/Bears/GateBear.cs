@@ -1,6 +1,7 @@
 using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.Interfaces;
 using _ORANGEBEAR_.EventSystem;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,14 +29,20 @@ namespace _GAME_.Scripts.Bears
 
         #region MonoBehaviour Methods
 
+        private void Awake()
+        {
+            InitGate();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.TryGetComponent(out IWarrior warrior))
             {
                 return;
             }
-            
-            
+
+            warrior.HitToGate(gateType, worth);
+            DestroyGate();
         }
 
         #endregion
@@ -44,7 +51,17 @@ namespace _GAME_.Scripts.Bears
 
         private void InitGate()
         {
-            
+            gateTitleText.text = gateType.ToString();
+
+            gateHolder.color = worth >= 0 ? positiveColor : negativeColor;
+
+            worthText.text = worth.ToString();
+        }
+
+        private void DestroyGate()
+        {
+            transform.DOLocalMoveY(-2, .3f)
+                .OnComplete(() => { Destroy(gameObject); }).SetEase(Ease.InBack).SetLink(gameObject);
         }
 
         #endregion

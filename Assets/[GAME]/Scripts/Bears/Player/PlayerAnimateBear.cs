@@ -71,5 +71,19 @@ namespace _GAME_.Scripts.Bears.Player
         }
 
         #endregion
+
+        #region Public Methods
+
+        public void PlayTransformAnimations(CharacterTypes characterType, CharacterTypes defaultCharacterType)
+        {
+            if (characterType == defaultCharacterType)
+            {
+                return;
+            }
+            
+            _animator.SetTrigger(Roll);
+        }
+
+        #endregion
     }
 }

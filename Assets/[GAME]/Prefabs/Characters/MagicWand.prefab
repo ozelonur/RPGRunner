@@ -13415,6 +13415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927823265588962564}
   - component: {fileID: 927823265581435584}
+  - component: {fileID: 9206508417354873185}
   m_Layer: 0
   m_Name: MagicWand
   m_TagString: Untagged
@@ -13522,6 +13523,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9206508417354873185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927823265588738404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f145137f1406fa6dfc26c49bbdb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &927823265588738406
 GameObject:
   m_ObjectHideFlags: 0
