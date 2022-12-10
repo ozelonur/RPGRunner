@@ -29,6 +29,7 @@ namespace _GAME_.Scripts.Bears.Player
         private CharacterData _characterData;
 
         private GameObject _currentCharacter;
+        private Transform _playerTransform;
 
         private PlayerAnimateBear _playerAnimateBear;
         
@@ -47,6 +48,7 @@ namespace _GAME_.Scripts.Bears.Player
         private void Awake()
         {
             _playerAnimateBear = GetComponent<PlayerAnimateBear>();
+            _playerTransform = transform;
         }
 
         private void Start()
@@ -93,7 +95,7 @@ namespace _GAME_.Scripts.Bears.Player
         {
             _characterData = _dataManager.GetCharacterData(newCharacterType);
             
-            FeelingManager.Instance.PlayDustParticle(transform,transform.position + Vector3.up);
+            FeelingManager.Instance.PlayDustParticle(_playerTransform,_playerTransform.position + Vector3.up);
 
             Destroy(_currentCharacter);
 

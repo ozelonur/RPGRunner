@@ -1,36 +1,18 @@
 ﻿using _GAME_.Scripts.Entities;
-using _ORANGEBEAR_.EventSystem;
+using _GAME_.Scripts.Extensions;
 using UnityEngine;
 
 namespace _GAME_.Scripts.Manager
 {
-    public class MoneyManager : Bear
+    public class MoneyManager : Manager<MoneyManager>
     {
-        #region Singleton
-
-        public static MoneyManager Instance;
-
-        #endregion
-
-        #region Propertiess
+        #region Properties
 
         public MoneyData MoneyData { get; private set; }
 
         #endregion
 
         #region MonoBehaviour Methods
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
 
         private void Start()
         {
@@ -57,7 +39,7 @@ namespace _GAME_.Scripts.Manager
         {
             MoneyData.AddMoney(amount);
         }
-        
+
         public void SubtractMoney(int amount)
         {
             MoneyData.SubtractMoney(amount);
