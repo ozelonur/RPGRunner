@@ -12,6 +12,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         private Animator _animator;
         private static readonly int Roll = Animator.StringToHash("Roll");
+        private static readonly int Attack = Animator.StringToHash("Attack");
 
         #endregion
 
@@ -82,6 +83,11 @@ namespace _GAME_.Scripts.Bears.Player
             }
             
             _animator.SetTrigger(Roll);
+        }
+
+        public void PlayAttackAnimation()
+        {
+            _animator.SetTrigger(Attack);
         }
 
         #endregion

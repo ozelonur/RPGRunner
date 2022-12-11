@@ -4,6 +4,8 @@ namespace _GAME_.Scripts.Enums
     {
         Idle,
         Run,
+        Attack,
+        TakeDamage,
         Roll
     }
 }

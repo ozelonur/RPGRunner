@@ -150,5 +150,10 @@ namespace _GAME_.Scripts.Bears.Player
 
             Roar(CustomEvents.UpdateWorths, gateType, worth);
         }
+
+        public void TakeDamage(params object[] args)
+        {
+            _playerAnimateBear.PlayAnimation(AnimationTypes.TakeDamage);
+        }
     }
 }

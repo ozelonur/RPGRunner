@@ -8,5 +8,6 @@ namespace _GAME_.Scripts.Interfaces
         public List<CharacterWorthData> characterWorthData { get; set; }
 
         void HitToGate(params object[] args);
+        void TakeDamage(params object[] args);
     }
 }
