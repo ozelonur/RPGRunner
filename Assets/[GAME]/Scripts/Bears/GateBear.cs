@@ -4,7 +4,6 @@ using _ORANGEBEAR_.EventSystem;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace _GAME_.Scripts.Bears
 {
@@ -16,13 +15,16 @@ namespace _GAME_.Scripts.Bears
         private GateType gateType;
 
         [SerializeField] private int worth;
-        [SerializeField] private Color positiveColor;
-        [SerializeField] private Color negativeColor;
+        [SerializeField] private Material positiveMaterial;
+        [SerializeField] private Material negativeMaterial;
+        [SerializeField] private Material positiveHolderMaterial;
+        [SerializeField] private Material negativeHolderMaterial;
+        [SerializeField] private Renderer[] gateRenderers;
+        [SerializeField] private Renderer holderRenderer;
 
         [Header("Components")] [SerializeField]
-        private Image gateHolder;
+        private TMP_Text worthText;
 
-        [SerializeField] private TMP_Text worthText;
         [SerializeField] private TMP_Text gateTitleText;
 
         #endregion
@@ -53,9 +55,35 @@ namespace _GAME_.Scripts.Bears
         {
             gateTitleText.text = gateType.ToString();
 
-            gateHolder.color = worth >= 0 ? positiveColor : negativeColor;
+            if (worth >= 0)
+            {
+                foreach (Renderer gRenderer in gateRenderers)
+                {
+                    gRenderer.material = positiveMaterial;
+                }
 
-            worthText.text = worth.ToString();
+                holderRenderer.material = positiveHolderMaterial;
+            }
+
+            else
+            {
+                foreach (Renderer gRenderer in gateRenderers)
+                {
+                    gRenderer.material = negativeMaterial;
+                }
+
+                holderRenderer.material = negativeHolderMaterial;
+            }
+
+            if (worth < 0 )
+            {
+                worthText.text = "- " + worth;
+            }
+
+            else
+            {
+                worthText.text = "+ " + worth;
+            }
         }
 
         private void DestroyGate()
