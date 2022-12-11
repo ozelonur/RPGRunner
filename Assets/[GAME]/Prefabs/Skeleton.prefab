@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1299598920916469424}
   m_Layer: 8
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,8 +57,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2, z: 4}
-  m_Center: {x: 0, y: 1, z: 2}
+  m_Size: {x: 3, y: 2, z: 7}
+  m_Center: {x: 0, y: 1, z: 3.5}
 --- !u!1 &8873593583001262115
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +157,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500050363843843467, guid: e3471221a8111b84689484d3bad73afa,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500050363843843467, guid: e3471221a8111b84689484d3bad73afa,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3471221a8111b84689484d3bad73afa, type: 3}

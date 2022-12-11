@@ -2867,6 +2867,8 @@ MonoBehaviour:
     type: 3}
   bloodParticlePrefab: {fileID: 7862511144577894748, guid: 922f0f465e7691147b969cc356950492,
     type: 3}
+  magicSpherePrefab: {fileID: 1729585755398764193, guid: 694ba3da0dec1d94f8fdbb2199d537a1,
+    type: 3}
   skeletonPrefab: {fileID: 3135336364440850049, guid: 2444223e7fe1cf54d8540f464b0cbdca,
     type: 3}
   dustParticleParent: {fileID: 1416258078}

@@ -19,7 +19,7 @@ namespace _GAME_.Scripts.Bears.Player
         private Transform modelParent;
 
         [Header("Configurations")] [SerializeField]
-        private CharacterTypes defaultCharacterType;
+        public CharacterTypes defaultCharacterType;
 
         #endregion
 

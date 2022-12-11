@@ -10,6 +10,7 @@ namespace _GAME_.Scripts.Manager
 
         [Header("Prefabs")] [SerializeField] private ParticleBear dustParticlePrefab;
         [Header("Prefabs")] [SerializeField] private ParticleBear bloodParticlePrefab;
+        [Header("Prefabs")] [SerializeField] private MagicSphereBear magicSpherePrefab;
         [SerializeField] private Skeleton skeletonPrefab;
         [Header("Parents")] [SerializeField] private Transform dustParticleParent;
         [SerializeField] private Transform skeletonParent;
@@ -22,6 +23,7 @@ namespace _GAME_.Scripts.Manager
         public CustomObjectPool<ParticleBear> dustParticlePool;
         public CustomObjectPool<Skeleton> skeletonPool;
         public CustomObjectPool<ParticleBear> bloodParticlePool;
+        public CustomObjectPool<MagicSphereBear> magicParticlePool;
 
         #endregion
 
@@ -35,6 +37,8 @@ namespace _GAME_.Scripts.Manager
             skeletonPool = new CustomObjectPool<Skeleton>(skeletonPrefab, 10, skeletonParent);
             
             bloodParticlePool = new CustomObjectPool<ParticleBear>(bloodParticlePrefab, 10, bloodParticleParent);
+            
+            magicParticlePool = new CustomObjectPool<MagicSphereBear>(magicSpherePrefab, 10, bloodParticleParent);
         }
 
         #endregion
