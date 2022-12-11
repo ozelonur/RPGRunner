@@ -2,6 +2,7 @@ using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.GlobalVariables;
 using _GAME_.Scripts.Interfaces;
 using _ORANGEBEAR_.EventSystem;
+using DG.Tweening;
 using UnityEngine;
 
 namespace _GAME_.Scripts.Bears.Player
@@ -13,6 +14,7 @@ namespace _GAME_.Scripts.Bears.Player
         private Animator _animator;
         private static readonly int Roll = Animator.StringToHash("Roll");
         private static readonly int Attack = Animator.StringToHash("Attack");
+        private static readonly int Die = Animator.StringToHash("Die");
 
         #endregion
 
@@ -88,6 +90,18 @@ namespace _GAME_.Scripts.Bears.Player
         public void PlayAttackAnimation()
         {
             _animator.SetTrigger(Attack);
+        }
+
+        public void PlayDieAnimation()
+        {
+            _animator.SetTrigger(Die);
+            Roar(CustomEvents.CanMoveHorizontal, false);
+            Roar(CustomEvents.CanFollowPath, false);
+
+            DOVirtual.DelayedCall(2f, () =>
+            {
+                Roar(GameEvents.OnGameComplete, false);
+            });
         }
 
         #endregion

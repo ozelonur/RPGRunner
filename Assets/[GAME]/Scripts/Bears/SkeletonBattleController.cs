@@ -1,3 +1,4 @@
+using _GAME_.Scripts.GlobalVariables;
 using _GAME_.Scripts.Interfaces;
 using _GAME_.Scripts.Manager;
 using _ORANGEBEAR_.EventSystem;
@@ -28,6 +29,7 @@ namespace _GAME_.Scripts.Bears
         {
             _collider.enabled = false;
             _skeletonAnimateBear.PlayDeathAnimation();
+            Roar(CustomEvents.GetExperience, 10);
             FeelingManager.Instance.PlayBloodParticle(transform, transform.position + Vector3.up);
         }
         

@@ -35,6 +35,8 @@ namespace _GAME_.Scripts.Bears.Player
         
         private CharacterTypes newCharacterType;
 
+        private int _health = 100;
+
         #endregion
 
         #region Interface Variables
@@ -64,6 +66,14 @@ namespace _GAME_.Scripts.Bears.Player
             Roar(CustomEvents.GetAnimator, animator);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                TakeDamage(100);
+            }
+        }
+
         #endregion
 
         #region Event Methods
@@ -83,6 +93,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         private void OnGameStart(object[] args)
         {
+            Roar(CustomEvents.UpdateHealthBar, _health);
             Roar(CustomEvents.CanFollowPath, true);
             Roar(CustomEvents.CanMoveHorizontal, true);
         }
@@ -154,6 +165,15 @@ namespace _GAME_.Scripts.Bears.Player
         public void TakeDamage(params object[] args)
         {
             _playerAnimateBear.PlayAnimation(AnimationTypes.TakeDamage);
+            _health -= (int)args[0];
+
+            if (_health <= 0)
+            {
+                _health = 0;
+                _playerAnimateBear.PlayDieAnimation();
+            }
+            
+            Roar(CustomEvents.UpdateHealthBar, _health);
         }
     }
 }

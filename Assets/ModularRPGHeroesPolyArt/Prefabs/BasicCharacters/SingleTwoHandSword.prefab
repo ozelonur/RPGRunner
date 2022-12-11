@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 746211592795815520}
   - component: {fileID: 746211592796585776}
   - component: {fileID: 746211592797584752}
-  m_Layer: 0
+  - component: {fileID: 6064840552383375804}
+  - component: {fileID: 8999815633717113087}
+  m_Layer: 7
   m_Name: Sword6_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +85,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6064840552383375804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746211592795382272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.70326805, y: 1.8930372, z: 0.18172915}
+  m_Center: {x: -0.000000074505806, y: -0.7238778, z: 0.00000021979213}
+--- !u!114 &8999815633717113087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746211592795382272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d2285d99524cd6a991a81c380c315a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordAttack: {fileID: 6334953882916966735}
 --- !u!1 &746211592795382274
 GameObject:
   m_ObjectHideFlags: 0
@@ -11769,6 +11797,7 @@ GameObject:
   - component: {fileID: 746211592795815806}
   - component: {fileID: 746211592785989818}
   - component: {fileID: 8625727661589256799}
+  - component: {fileID: 6334953882916966735}
   m_Layer: 0
   m_Name: SingleTwoHandSword
   m_TagString: Untagged
@@ -11886,6 +11915,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 833f145137f1406fa6dfc26c49bbdb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6334953882916966735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746211592795382558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac33e2d350644b3b1b601cfb7fae2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &746211592795382560

@@ -26,8 +26,11 @@ namespace _GAME_.Scripts.GlobalVariables
         
         // UI
         public const string UpdateWorths = nameof(UpdateWorths);
+        public const string UpdateExperienceBar = nameof(UpdateExperienceBar);
+        public const string UpdateHealthBar = nameof(UpdateHealthBar);
         
         // GAME
-        public const string PlayTransformAnimation = nameof(PlayTransformAnimation);
+        public const string GetExperience = nameof(GetExperience);
+        public const string TakeDamage = nameof(TakeDamage);
     }
 }

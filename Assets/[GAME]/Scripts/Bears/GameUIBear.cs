@@ -1,12 +1,16 @@
 ﻿#region Header
+
 // Developed by Onur ÖZEL
+
 #endregion
 
 using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.GlobalVariables;
 using _ORANGEBEAR_.Scripts.Bears;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _GAME_.Scripts.Bears
 {
@@ -14,11 +18,20 @@ namespace _GAME_.Scripts.Bears
     {
         #region Serialized Fields
 
-        [Header("Worth Texts")]
-        [SerializeField] private TMP_Text _attackWorthText;
+        [Header("Worth Texts")] [SerializeField]
+        private TMP_Text _attackWorthText;
+
         [SerializeField] private TMP_Text _defenceWorthText;
         [SerializeField] private TMP_Text _magicWorthText;
+
+        [Header("Experience Bar")] [SerializeField]
+        private Image _experienceBar;
+
+        [SerializeField] private TMP_Text _experienceText;
         
+        [Header("Health Bar")]
+        [SerializeField] private Image _healthBar;
+        [SerializeField] private TMP_Text _healthText;
 
         #endregion
 
@@ -30,12 +43,44 @@ namespace _GAME_.Scripts.Bears
             if (status)
             {
                 Register(CustomEvents.UpdateWorths, UpdateWorths);
+                Register(CustomEvents.UpdateExperienceBar, UpdateExperienceBar);
+                Register(CustomEvents.UpdateHealthBar, UpdateHealthBar);
             }
 
             else
             {
                 UnRegister(CustomEvents.UpdateWorths, UpdateWorths);
+                UnRegister(CustomEvents.UpdateExperienceBar, UpdateExperienceBar);
+                UnRegister(CustomEvents.UpdateHealthBar, UpdateHealthBar);
             }
+        }
+
+        private void UpdateHealthBar(object[] args)
+        {
+            DOTween.Kill("HealthBarTween");
+            int health = (int)args[0];
+            _healthText.text = health.ToString();
+
+            float experienceAmount = (float)health / 100;
+
+            _healthBar.DOFillAmount(experienceAmount, .3f)
+                .SetEase(Ease.Linear)
+                .SetLink(_experienceBar.gameObject)
+                .SetId("HealthBarTween");
+        }
+
+        private void UpdateExperienceBar(object[] args)
+        {
+            DOTween.Kill("ExperienceBarTween");
+            int experience = (int)args[0];
+            _experienceText.text = experience + " / 100";
+
+            float experienceAmount = (float)experience / 100;
+
+            _experienceBar.DOFillAmount(experienceAmount, .3f)
+                .SetEase(Ease.Linear)
+                .SetLink(_experienceBar.gameObject)
+                .SetId("ExperienceBarTween");
         }
 
         protected override void InitLevel(object[] args)
@@ -44,13 +89,16 @@ namespace _GAME_.Scripts.Bears
             _attackWorthText.text = "ATTACK : 0";
             _defenceWorthText.text = "DEFENCE : 0";
             _magicWorthText.text = "MAGIC : 0";
+            
+            _experienceText.text = "0 / 100";
+            _experienceBar.fillAmount = 0;
         }
 
         private void UpdateWorths(object[] args)
         {
-            GateType worthType = (GateType) args[0];
-            int worth = (int) args[1];
-            
+            GateType worthType = (GateType)args[0];
+            int worth = (int)args[1];
+
             switch (worthType)
             {
                 case GateType.ATTACK:

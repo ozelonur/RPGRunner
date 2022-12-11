@@ -12,6 +12,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         private PlayerAnimateBear _playerAnimateBear;
         private bool _triggered;
+        private int _health;
 
         #endregion
 
