@@ -13,6 +13,7 @@ namespace _GAME_.Scripts.Bears
 
         [Header("Components")] [SerializeField]
         private CinemachineVirtualCamera[] virtualCameras;
+        
 
         #endregion
 

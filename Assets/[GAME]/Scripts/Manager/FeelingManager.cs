@@ -13,6 +13,12 @@ namespace _GAME_.Scripts.Manager
             ParticleBear dust = PoolManager.Instance.dustParticlePool.Get();
             dust.Play(parent, position);
         }
+        
+        public void PlayBloodParticle(Transform parent,Vector3 position)
+        {
+            ParticleBear blood = PoolManager.Instance.bloodParticlePool.Get();
+            blood.Play(parent, position);
+        }
 
         #endregion
     }

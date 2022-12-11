@@ -2860,10 +2860,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dustParticlePrefab: {fileID: 8486632574680235569, guid: d6e6c88cb4bd6f54fa4afa8e96528457,
     type: 3}
+  bloodParticlePrefab: {fileID: 7862511144577894748, guid: 922f0f465e7691147b969cc356950492,
+    type: 3}
   skeletonPrefab: {fileID: 3135336364440850049, guid: 2444223e7fe1cf54d8540f464b0cbdca,
     type: 3}
   dustParticleParent: {fileID: 1416258078}
   skeletonParent: {fileID: 237588292}
+  bloodParticleParent: {fileID: 1416258078}
 --- !u!114 &1594743936
 MonoBehaviour:
   m_ObjectHideFlags: 0

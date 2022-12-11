@@ -9,9 +9,11 @@ namespace _GAME_.Scripts.Manager
         #region SerializeField
 
         [Header("Prefabs")] [SerializeField] private ParticleBear dustParticlePrefab;
+        [Header("Prefabs")] [SerializeField] private ParticleBear bloodParticlePrefab;
         [SerializeField] private Skeleton skeletonPrefab;
         [Header("Parents")] [SerializeField] private Transform dustParticleParent;
         [SerializeField] private Transform skeletonParent;
+        [SerializeField] private Transform bloodParticleParent;
 
         #endregion
 
@@ -19,6 +21,7 @@ namespace _GAME_.Scripts.Manager
 
         public CustomObjectPool<ParticleBear> dustParticlePool;
         public CustomObjectPool<Skeleton> skeletonPool;
+        public CustomObjectPool<ParticleBear> bloodParticlePool;
 
         #endregion
 
@@ -30,6 +33,8 @@ namespace _GAME_.Scripts.Manager
                 new CustomObjectPool<ParticleBear>(dustParticlePrefab, 10, dustParticleParent);
 
             skeletonPool = new CustomObjectPool<Skeleton>(skeletonPrefab, 10, skeletonParent);
+            
+            bloodParticlePool = new CustomObjectPool<ParticleBear>(bloodParticlePrefab, 10, bloodParticleParent);
         }
 
         #endregion

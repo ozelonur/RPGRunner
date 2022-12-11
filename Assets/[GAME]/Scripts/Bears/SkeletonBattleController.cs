@@ -1,4 +1,5 @@
 using _GAME_.Scripts.Interfaces;
+using _GAME_.Scripts.Manager;
 using _ORANGEBEAR_.EventSystem;
 using UnityEngine;
 
@@ -25,9 +26,9 @@ namespace _GAME_.Scripts.Bears
 
         public void TakeDamage(params object[] args)
         {
-            print("Die");
             _collider.enabled = false;
             _skeletonAnimateBear.PlayDeathAnimation();
+            FeelingManager.Instance.PlayBloodParticle(transform, transform.position + Vector3.up);
         }
         
         public void InitSkeletonBattleController()

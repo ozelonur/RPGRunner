@@ -10812,6 +10812,7 @@ GameObject:
   - component: {fileID: 3198343427107909815}
   - component: {fileID: 3198343427106910967}
   - component: {fileID: 5646785407085815689}
+  - component: {fileID: 163132250938981744}
   m_Layer: 7
   m_Name: Sword5_R
   m_TagString: Untagged
@@ -10897,6 +10898,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.41851264, y: 1.7049059, z: 0.12846896}
   m_Center: {x: -0.03071165, y: -0.6419509, z: 0.00000022351742}
+--- !u!114 &163132250938981744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198343427104910727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d2285d99524cd6a991a81c380c315a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordAttack: {fileID: 3412758278544370654}
 --- !u!1 &3198343427104910729
 GameObject:
   m_ObjectHideFlags: 0
