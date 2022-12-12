@@ -41,6 +41,7 @@ namespace _GAME_.Scripts.Bears.Player
 
         #region Interface Variables
 
+        public bool IsDead { get; set; }
         [field: SerializeField] public List<CharacterWorthData> characterWorthData { get; set; }
 
         #endregion
@@ -56,6 +57,8 @@ namespace _GAME_.Scripts.Bears.Player
         private void Start()
         {
             _dataManager = DataManager.Instance;
+            
+            PlayerManager.Instance.SetWarrior(this);
 
             _characterData = _dataManager.GetCharacterData(defaultCharacterType);
 
@@ -170,10 +173,16 @@ namespace _GAME_.Scripts.Bears.Player
             if (_health <= 0)
             {
                 _health = 0;
+                IsDead = true;
                 _playerAnimateBear.PlayDieAnimation();
             }
             
             Roar(CustomEvents.UpdateHealthBar, _health);
+        }
+
+        public Transform GetTransform()
+        {
+            return _playerTransform;
         }
     }
 }

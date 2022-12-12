@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _GAME_.Scripts.Enums;
 using _GAME_.Scripts.GlobalVariables;
+using _GAME_.Scripts.Manager;
 using _ORANGEBEAR_.EventSystem;
 using Cinemachine;
 using UnityEngine;
@@ -41,13 +42,21 @@ namespace _GAME_.Scripts.Bears
             {
                 Register(CustomEvents.SwitchCamera, SwitchCamera);
                 Register(CustomEvents.GetCameraFollowTarget, GetCameraFollowTarget);
+                Register(CustomEvents.OnFinishLine, OnFinishLine);
             }
 
             else
             {
                 UnRegister(CustomEvents.SwitchCamera, SwitchCamera);
                 UnRegister(CustomEvents.GetCameraFollowTarget, GetCameraFollowTarget);
+                UnRegister(CustomEvents.OnFinishLine, OnFinishLine);
             }
+        }
+
+        private void OnFinishLine(object[] args)
+        {
+            virtualCameras[1].m_LookAt = PlayerManager.Instance.warrior.GetTransform();
+            Switch(CameraTypes.Finish);
         }
 
         private void GetCameraFollowTarget(object[] args)

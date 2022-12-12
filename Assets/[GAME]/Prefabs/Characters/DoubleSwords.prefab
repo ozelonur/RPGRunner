@@ -2127,6 +2127,7 @@ GameObject:
   - component: {fileID: 6753903744551029959}
   - component: {fileID: 6753903744560390915}
   - component: {fileID: 907420206129224748}
+  - component: {fileID: 4853675037668245724}
   m_Layer: 0
   m_Name: DoubleSwords
   m_TagString: Untagged
@@ -2244,6 +2245,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 833f145137f1406fa6dfc26c49bbdb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4853675037668245724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753903744550867111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac33e2d350644b3b1b601cfb7fae2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6753903744550867113
@@ -12312,7 +12325,9 @@ GameObject:
   - component: {fileID: 6753903744551030221}
   - component: {fileID: 6753903744549735613}
   - component: {fileID: 6753903744548605693}
-  m_Layer: 0
+  - component: {fileID: 1291720723903165370}
+  - component: {fileID: 344498001903019966}
+  m_Layer: 7
   m_Name: Hammer2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12384,6 +12399,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1291720723903165370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753903744550867373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d2285d99524cd6a991a81c380c315a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordAttack: {fileID: 4853675037668245724}
+--- !u!65 &344498001903019966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753903744550867373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.84942114, y: 1.6843095, z: 0.37626204}
+  m_Center: {x: 0.025966495, y: -0.3958706, z: 0.00000026077032}
 --- !u!1 &6753903744550867375
 GameObject:
   m_ObjectHideFlags: 0

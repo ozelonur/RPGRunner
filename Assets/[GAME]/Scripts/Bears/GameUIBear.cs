@@ -28,10 +28,13 @@ namespace _GAME_.Scripts.Bears
         private Image _experienceBar;
 
         [SerializeField] private TMP_Text _experienceText;
-        
-        [Header("Health Bar")]
-        [SerializeField] private Image _healthBar;
+
+        [Header("Health Bar")] [SerializeField]
+        private Image _healthBar;
+
         [SerializeField] private TMP_Text _healthText;
+
+        [Header("Info Text")] [SerializeField] private TMP_Text infoText;
 
         #endregion
 
@@ -45,6 +48,7 @@ namespace _GAME_.Scripts.Bears
                 Register(CustomEvents.UpdateWorths, UpdateWorths);
                 Register(CustomEvents.UpdateExperienceBar, UpdateExperienceBar);
                 Register(CustomEvents.UpdateHealthBar, UpdateHealthBar);
+                Register(CustomEvents.OnFinishLine, OnFinishLine);
             }
 
             else
@@ -52,7 +56,14 @@ namespace _GAME_.Scripts.Bears
                 UnRegister(CustomEvents.UpdateWorths, UpdateWorths);
                 UnRegister(CustomEvents.UpdateExperienceBar, UpdateExperienceBar);
                 UnRegister(CustomEvents.UpdateHealthBar, UpdateHealthBar);
+                UnRegister(CustomEvents.OnFinishLine, OnFinishLine);
             }
+        }
+
+        private void OnFinishLine(object[] args)
+        {
+            infoText.DOFade(1, 0.5f).SetLoops(6, LoopType.Yoyo)
+                .OnComplete(() => infoText.DOFade(0, 0.5f).SetLink(gameObject)).SetLink(gameObject);
         }
 
         private void UpdateHealthBar(object[] args)
@@ -86,10 +97,11 @@ namespace _GAME_.Scripts.Bears
         protected override void InitLevel(object[] args)
         {
             base.InitLevel(args);
+            infoText.DOFade(0, 0f).SetLink(gameObject);
             _attackWorthText.text = "ATTACK : 0";
             _defenceWorthText.text = "DEFENCE : 0";
             _magicWorthText.text = "MAGIC : 0";
-            
+
             _experienceText.text = "0 / 100";
             _experienceBar.fillAmount = 0;
         }
